@@ -1,0 +1,8 @@
+package com.internousdev.login.util;
+import java.sql.Connector;
+import java.sql.Drivermanager;
+
+
+public class DBConnector {
+
+}
