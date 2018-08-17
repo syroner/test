@@ -1,7 +1,0 @@
-package com.internousdev.action;
-
-public class LoginAction {
-		private String name;
-		private String password;
-
-}

@@ -1,0 +1,17 @@
+package com.internousdev.templateX.dao;
+
+import com.internousdev.templateX.dto.LoginDTO;
+
+
+
+
+public class LoginDAO {
+
+	public LoginDTO getLoginUserInfo(String loginUserId,String loginPassword) {
+
+
+	}
+
+
+
+}
