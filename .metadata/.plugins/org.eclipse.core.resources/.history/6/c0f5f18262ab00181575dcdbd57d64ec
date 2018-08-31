@@ -1,0 +1,44 @@
+package com.internousdev.ecsite.dao;
+import java.sql.Connection;
+import java.sql.ResultSet;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+import java.util.ArrayList;
+
+import com.internousdev.ecsite.util.DBConnector;
+import com.internousdev.ecsite.dto.UserListDTO;
+
+public class UserListDAO {
+
+	private DBConnector dbConnector = new DBConnector();
+	private Connection connection = dbConnector.getConnection();
+	ArrayList<UserListDTO>userListDTO = new ArrayList<UserListDTO>();
+
+	public ArrayList<UserListDTO> getmyPageUserInfo
+	(String login_id,String login_password,String user_name)throws SQLException{
+
+		String sql="SELECT * login_id,login_pass,user_name FROM login_user_transaction";
+
+		try{
+			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setString(1, login_id);
+			preparedStatement.setString(2, login_password);
+			preparedStatement.setString(3, user_name);
+
+			ResultSet resultSet = preparedStatement.executeQuery();
+
+			while(resultSet.next()){
+
+				UserListDTO dto= new UserListDTO();
+				dto.setLoginId(resultSet.getString("login_id");
+
+
+			}
+
+
+		}
+
+
+	}
+
+}

@@ -1,0 +1,13 @@
+package com.internousdev.ecsite.action;
+
+import com.opensymphony.xwork2.ActionSupport;
+
+
+
+public class UserListAction extends ActionSupport {
+
+
+
+	String sql="SELECT * FROM login_user_transaction(login_id,login_pass,user_name)";
+
+}

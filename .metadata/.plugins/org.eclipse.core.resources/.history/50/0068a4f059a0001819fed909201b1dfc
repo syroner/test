@@ -1,8 +1,0 @@
-package com.internousdev.templateX.dao;
-import com.internousdev.templateX.util.DateUtil;
-
-public class UserCreateCompleteDAO {
-
-	private DateUtil dateUtil = new DateUtil();
-
-}

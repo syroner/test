@@ -1,0 +1,24 @@
+package com.internousdev.ecsite.dao;
+import java.sql.Connection;
+import java.sql.ResultSet;
+
+import com.internousdev.ecsite.util.DBConnector;
+import com.mysql.jdbc.PreparedStatement;
+
+public class UserListDAO {
+
+	private DBConnector dbConnector = new DBConnector();
+	private Connection connection = dbConnector.getConnection();
+	ArrayList<UserListDTO>userListDTO = new ArrayList<UserListDTO>();
+
+	public ArrayList<UserListDTO> getmyPageUserInfo
+	(String login_id,String login_password,String user_name)throws SQLException{
+
+
+
+
+}
+
+
+	}
+}

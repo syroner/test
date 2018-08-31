@@ -1,0 +1,14 @@
+package com.internousdev.ecsite.dao;
+import java.sql.Connection;
+
+import com.internousdev.ecsite.util.DBConnector;
+
+public class UserListDAO {
+
+	private DBConnector dbConnector = new DBConnector();
+
+	private Connection connection = dbConnector.getConnection();
+
+	String sql="SELECT * FROM login_user_transaction(login_id,login_pass,user_name)";
+
+}

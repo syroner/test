@@ -1,0 +1,9 @@
+package com.internousdev.ecsite.action;
+
+public class UserListAction {
+
+
+
+	String sql="SELECT * FROM login_user_transaction(login_id,login_pass,user_name)";
+
+}

@@ -1,0 +1,17 @@
+package com.internousdev.ecsite.action;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import com.internousdev.ecsite.util.DBConnector;
+
+public class UserListAction {
+
+	private DBConnector dbConnector = new DBConnector();
+
+	private Connection connection = dbConnector.getConnection();
+
+	String sql="SELECT * FROM login_user_transaction(login_id,login_pass,user_name)";
+
+}

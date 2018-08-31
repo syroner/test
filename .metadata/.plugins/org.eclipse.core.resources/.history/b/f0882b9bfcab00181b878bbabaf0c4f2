@@ -1,0 +1,49 @@
+package com.internousdev.ecsite.action;
+
+import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.Map;
+
+import com.internousdev.ecsite.dao.UserListDAO;
+import com.internousdev.ecsite.dto.UserListDTO;
+import com.opensymphony.xwork2.ActionSupport;
+
+
+
+public class UserListAction extends ActionSupport {
+
+	private UserListDAO userListDAO = new UserListDAO();
+	private ArrayList<UserListDTO> userList = new ArrayList<UserListDTO>();
+	private Map<String, Object> session;
+
+	public String execute() throws SQLException{
+		String result=SUCCESS;
+		userList = userListDAO.getUserListInfo();
+		session.put("userList", userList);
+		return result;
+	}
+
+	public ArrayList<UserListDTO> getUserList() {
+		return userList;
+	}
+
+	public void setUserList(ArrayList<UserListDTO> userList) {
+		this.userList = userList;
+	}
+
+	public UserListDAO getUserListDAO() {
+		return userListDAO;
+	}
+
+	public void setUserListDAO(UserListDAO userListDAO) {
+		this.userListDAO = userListDAO;
+	}
+
+	public Map<String, Object> getSession() {
+		return session;
+	}
+
+	public void setSession(Map<String, Object> session) {
+		this.session = session;
+	}
+}

@@ -1,0 +1,11 @@
+package com.internousdev.ecsite.action;
+
+import com.internousdev.ecsite.util.DBConnector;
+
+public class UserListAction {
+
+	private DBConnector dbConnector = new DBConnector();
+
+	private Connection connection = dbConnector.getConnection();
+
+}

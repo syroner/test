@@ -1,0 +1,50 @@
+package com.internousdev.ecsite.dao;
+
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.SQLException;
+
+import com.internousdev.ecsite.dto.BuyItemAddDTO;
+import com.internousdev.ecsite.util.DBConnector;
+
+public class BuyItemAddDAO {
+
+
+
+		DBConnector dbConnector = new DBConnector();
+		Connection connection = dbConnector.getConnection();
+		BuyItemAddDTO buyItemAddDTO = new BuyItemAddDTO();
+		String sql="INSERT INTO item_info_transaction(id,item_name,item_price,item_stock) VALUES(?,?,?,?)";
+
+		public BuyItemAddDTO getBuyItemAddInfo(String id,String itemname,String itemPrice,String itemStock) throws SQLException{
+
+
+		try{
+			PreparedStatement preparedStatement = connection.prepareStatement(sql);
+			preparedStatement.setString(1,id);
+			preparedStatement.setString(2, itemname);
+			preparedStatement.setString(3, itemPrice);
+			preparedStatement.setString(4, itemStock);
+			preparedStatement.execute();
+
+
+
+/**			if(resultSet.next()){
+
+				buyItemAddDTO.setId(resultSet.getInt("id"));
+				buyItemAddDTO.setItemName(resultSet.getString("itemName"));
+				buyItemAddDTO.setItemPrice(resultSet.getInt("itemPrice"));
+				buyItemAddDTO.setStock(resultSet.getInt("itemstock"));
+			}*/
+
+
+		}catch(Exception e){
+			e.printStackTrace();
+		}
+
+		return buyItemAddDTO;
+	}
+
+
+
+}

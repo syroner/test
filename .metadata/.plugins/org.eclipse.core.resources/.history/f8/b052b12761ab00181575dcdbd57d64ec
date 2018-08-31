@@ -1,0 +1,11 @@
+package com.internousdev.ecsite.dto;
+
+public class UserListDTO {
+
+	public String userName;
+
+	public String loginId;
+
+	public String loginPassword;
+
+}

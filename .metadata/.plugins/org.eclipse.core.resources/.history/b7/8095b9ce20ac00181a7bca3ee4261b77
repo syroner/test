@@ -1,0 +1,46 @@
+package com.internousdev.ecsite.action;
+
+import java.util.Map;
+
+import org.apache.struts2.interceptor.SessionAware;
+
+import com.opensymphony.xwork2.ActionSupport;
+import com.internousdev.ecsite.dao.BuyItemAddDAO;
+import java.sql.SQLException;
+
+
+
+
+public class BuyItemAddAction extends ActionSupport implements SessionAware{
+
+	public Map<String, Object> session;
+	private String id;
+	private String itemName;
+	private String itemPrice;
+	private String itemStock;
+
+	private BuyItemAddDAO buyItemAddDAO = new BuyItemAddDAO();
+
+public String execute() throws SQLException{
+
+
+
+	buyItemAddDAO.getBuyItemAddInfo(String id,String itemName,String itemPrice,String itemStock){
+
+		session.get("id");
+		session.get("itemName");
+		session.get("itemPrice");
+		session.get("itemStock");
+
+		String result =SUCCESS;
+		return result;
+
+	}
+
+
+
+
+}
+
+
+}
